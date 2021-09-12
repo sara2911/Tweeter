@@ -1,0 +1,24 @@
+type FollowersOfuser {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateFollowersOfuserInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateFollowersOfuserInput {
+  id: Int!
+}
+
+type Query {
+  followersOfuser: [FollowersOfuser]!
+  followersOfuser(id: Int!): FollowersOfuser
+}
+
+type Mutation {
+  createFollowersOfuser(createFollowersOfuserInput: CreateFollowersOfuserInput!): FollowersOfuser!
+  updateFollowersOfuser(updateFollowersOfuserInput: UpdateFollowersOfuserInput!): FollowersOfuser!
+  removeFollowersOfuser(id: Int!): FollowersOfuser
+}

@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type FollowersOfuser {
+  id: Float!
+  idUserFollow: Float!
+  User: User!
+  userId: Float!
+}
+
+type Tweet {
+  id: Float!
+  tweet: String!
+  User: User!
+  userId: Float!
+}
+
+type User {
+  id: Float!
+  name: String
+  email: String!
+  tweets: [Tweet!]
+  followersOfuser: [FollowersOfuser!]
+}
+
+type Query {
+  sayHello: String!
+  findAllUser: [User!]!
+  findOneUser(id: Float!): User!
+  AllfollowerOfUser(idUserFollow: Float!): [FollowersOfuser!]!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  login(email: String!): String!
+  createTweet(createTweetInput: CreateTweetInput!): Tweet!
+}
+
+input CreateUserInput {
+  name: String
+  email: String!
+}
+
+input CreateTweetInput {
+  tweet: String!
+  userId: Float!
+}
